@@ -17,12 +17,12 @@ public:
     ~MainWindow();
 
 private slots:
+    // 槽函数，用于响应界面操作
     void on_browseButton_clicked();
     void on_startButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    TireTree tree;
-    QString selectedFilePath;
+    QString selectedFilePath; // 用于存储用户选择的文件路径
 };
 #endif // MAINWINDOW_H
