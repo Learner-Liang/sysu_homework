@@ -1,6 +1,6 @@
 # Airplane Game
 
-A classic airplane shooting game built with Qt6.
+A classic airplane shooting game built with Qt.
 
 ## Features
 
@@ -19,7 +19,7 @@ A classic airplane shooting game built with Qt6.
 
 ## Requirements
 
-- Qt6 (Widgets module)
+- Qt5 or Qt6 (Widgets module)
 - CMake 3.16 or higher
 - C++17 compatible compiler
 
