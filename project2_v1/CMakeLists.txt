@@ -1,11 +1,1 @@
- cmake_minimum_required(VERSION 3.16) 
- project(Project2Qt LANGUAGES CXX)
- set(CMAKE_CXX_STANDARD 17) set(CMAKE_AUTOMOC ON)
- set(CMAKE_CXX_EXTENSIONS OFF)
- set(CMAKE_AUTOMOC ON)
-   find_package(Qt5 REQUIRED COMPONENTS Widgets)
-    set(PROJECT_SOURCES  main.cpp  ../project2/tire_tree.cpp )
-   add_executable(Project2Qt WIN32  main.cpp  ../project2/tire_tree.cpp )
 
-   target_include_directories(Project2Qt PRIVATE ../project2)
-   target_link_libraries(Project2Qt PRIVATE Qt5::Widgets)
