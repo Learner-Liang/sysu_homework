@@ -1,0 +1,12 @@
+{
+  "editor.autoIndent": "full",
+  "editor.detectIndentation": true,
+  "editor.tabSize": 4,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "fstream": "cpp"
+  }
+}
