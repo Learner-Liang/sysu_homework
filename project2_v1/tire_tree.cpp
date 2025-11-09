@@ -1,64 +1,25 @@
-#include "tire_tree.h"
-
-void TireTree::clear_children(TireNode* node){//清除当前节点的子树，释放内存
-    for(int i=0;i<26;i++){
-        if(node->children[i]!=nullptr){
-            clear_children(node->children[i]);//递归释放子节点
-        }
-    }
-    delete node;
-    return ;
-}
-
-TireTree::~TireTree(){//析构函数，释放字典树内存
-   for(int i=0;i<26;i++){
-        if(root.children[i]!=nullptr){
-            clear_children(root.children[i]);//释放根节点的子节点
-        }
-   }
-   return ;
-}
-
-void TireTree::insert(const string &word){//在字典树中插入一个单词
-    word_map[word]=vector<PII>();//初始化模式串在文本中出现位置的记录
-    TireNode *p = &root;
-    for (int i = 0,ind; word[i];i++){
-        if(word[i]>='A'&&word[i]<='Z'){
-            ind=word[i]-'A';
-        }
-        else if(word[i]>='a'&&word[i]<='z'){
-            ind=word[i]-'a';
-        }
-        else{
-            continue;
-        }
-        if(p->children[ind]==nullptr){
-            p->children[ind]= new TireNode();
-        }
-        p=p->children[ind];
-    }
-    p->is_vocabulary=true;
-    p->word=word;
-    return ;
-}
-
-TireNode* TireTree::search(const string &word){//在字典树中查找一个单词
-   TireNode *p=&root;
-   for (int i = 0; word[i];i++){
-       int ind;
-       if(word[i]>='A'&&word[i]<='Z'){
-           ind=word[i]-'A';
-       }
-       else if(word[i]>='a'&&word[i]<='z'){
-           ind=word[i]-'a';
-       }
-       else{
-           continue;
-       }
-         if(p->children[ind]==nullptr){
-              return nullptr;
-         }
-        p=p->children[ind];
-   }
-    return p;
-}
+//用字典树完成模式串匹配与单词数量统计
+#pragma once
+#include <iostream>
+#include <unordered_map>
+#include <string>
+#include <vector>
+using namespace std;
+typedef pair<int,int> PII;//左int表示行号，右int表示该行中的单词数量
+typedef struct TireNode{
+    TireNode* children[26]={nullptr};//字典树的子节点，当指向nullptr时表示没有该子节点，同时大小写字母等价
+    bool is_vocabulary=false;//判断当前节点是否是一个单词的结尾，false表示不是单词结尾，true表示是单词结尾
+    string word="";//存储以该节点结尾的单词
+}TireNode;
+class TireTree{
+    private:
+        TireNode root;//字典树的根节点
+    public:
+        //存储模式串匹配结果的哈希表，key为模式串，value为该模式串在文本中出现的位置及对应的单词编号
+        unordered_map<string,vector<PII>> word_map;
+        TireTree(){};//字典树的构造函数
+        ~TireTree();//字典树的析构函数
+        void clear_children(TireNode* node);//递归释放字典树节点的内存
+        void insert(const string& word);//向字典树中插入一个单词
+        TireNode* search(const string& word);//在字典树中查找一个单词
+};
