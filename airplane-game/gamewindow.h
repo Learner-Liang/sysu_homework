@@ -34,9 +34,9 @@ private:
     bool rightPressed;
     bool spacePressed;
     
-    static const int WINDOW_WIDTH = 800;
-    static const int WINDOW_HEIGHT = 600;
-    static const int FPS = 60;
+    static constexpr int WINDOW_WIDTH = 800;
+    static constexpr int WINDOW_HEIGHT = 600;
+    static constexpr int FPS = 60;
 };
 
 #endif // GAMEWINDOW_H

@@ -22,10 +22,10 @@ private:
     int x;
     int y;
     int health;
-    static const int WIDTH = 40;
-    static const int HEIGHT = 40;
-    static const int SPEED = 10;
-    static const int MAX_HEALTH = 100;
+    static constexpr int WIDTH = 40;
+    static constexpr int HEIGHT = 40;
+    static constexpr int SPEED = 10;
+    static constexpr int MAX_HEALTH = 100;
 };
 
 #endif // PLAYER_H

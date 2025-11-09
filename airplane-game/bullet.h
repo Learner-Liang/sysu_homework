@@ -16,9 +16,9 @@ private:
     int x;
     int y;
     bool active;
-    static const int WIDTH = 5;
-    static const int HEIGHT = 10;
-    static const int SPEED = 10;
+    static constexpr int WIDTH = 5;
+    static constexpr int HEIGHT = 10;
+    static constexpr int SPEED = 10;
 };
 
 #endif // BULLET_H

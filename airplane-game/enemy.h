@@ -29,8 +29,8 @@ private:
     bool active;
     int speed;
     int score;
-    static const int WIDTH = 40;
-    static const int HEIGHT = 40;
+    static constexpr int WIDTH = 40;
+    static constexpr int HEIGHT = 40;
 };
 
 #endif // ENEMY_H

@@ -11,8 +11,14 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-# Find Qt6 components
-find_package(Qt6 COMPONENTS Widgets REQUIRED)
+# Find Qt5 components (fallback to Qt6 if available)
+find_package(Qt5 COMPONENTS Widgets)
+if(NOT Qt5_FOUND)
+    find_package(Qt6 COMPONENTS Widgets REQUIRED)
+    set(QT_LIBRARIES Qt6::Widgets)
+else()
+    set(QT_LIBRARIES Qt5::Widgets)
+endif()
 
 # Add executable with source files
 add_executable(airplane-game
@@ -29,5 +35,5 @@ add_executable(airplane-game
     bullet.h
 )
 
-# Link Qt6::Widgets library
-target_link_libraries(airplane-game Qt6::Widgets)
+# Link Qt Widgets library
+target_link_libraries(airplane-game ${QT_LIBRARIES})
