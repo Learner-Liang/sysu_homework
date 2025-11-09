@@ -1,0 +1,12 @@
+build/
+*.o
+*.a
+*.so
+*.exe
+moc_*
+*.autosave
+*_autogen/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
