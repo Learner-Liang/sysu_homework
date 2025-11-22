@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Haffman 压缩/解压 - Qt 可视化</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayoutMain">
+
+    <!-- 压缩区域 -->
+    <item>
+     <widget class="QGroupBox" name="groupBoxCompress">
+      <property name="title">
+       <string>压缩</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayoutCompress">
+
+       <item>
+        <layout class="QHBoxLayout" name="layoutCompressInput">
+         <item>
+          <widget class="QLabel" name="labelCompressInput">
+           <property name="text">
+            <string>被压缩文本文件：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditCompressInput"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnBrowseCompressInput">
+           <property name="text">
+            <string>浏览...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+       <item>
+        <layout class="QHBoxLayout" name="layoutCompressOutputDir">
+         <item>
+          <widget class="QLabel" name="labelCompressOutputDir">
+           <property name="text">
+            <string>压缩文件输出目录：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditCompressOutputDir"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnBrowseCompressOutput">
+           <property name="text">
+            <string>浏览...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+       <item>
+        <layout class="QHBoxLayout" name="layoutCompressOutputFile">
+         <item>
+          <widget class="QLabel" name="labelCompressOutputFile">
+           <property name="text">
+            <string>压缩文件名：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditCompressOutputFileName">
+           <property name="placeholderText">
+            <string>默认：test_compress.zip</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btnCompress">
+         <property name="text">
+          <string>开始压缩</string>
+         </property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+    <!-- 解压区域 -->
+    <item>
+     <widget class="QGroupBox" name="groupBoxDecompress">
+      <property name="title">
+       <string>解压</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayoutDecompress">
+
+       <item>
+        <layout class="QHBoxLayout" name="layoutDecompressInput">
+         <item>
+          <widget class="QLabel" name="labelDecompressInput">
+           <property name="text">
+            <string>被解压 zip 文件：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditDecompressInput"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnBrowseDecompressInput">
+           <property name="text">
+            <string>浏览...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+       <item>
+        <layout class="QHBoxLayout" name="layoutDecompressOutputDir">
+         <item>
+          <widget class="QLabel" name="labelDecompressOutputDir">
+           <property name="text">
+            <string>解压输出目录：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditDecompressOutputDir"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnBrowseDecompressOutput">
+           <property name="text">
+            <string>浏览...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+       <item>
+        <layout class="QHBoxLayout" name="layoutDecompressOutputFile">
+         <item>
+          <widget class="QLabel" name="labelDecompressOutputFile">
+           <property name="text">
+            <string>输出文本文件名：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditDecompressOutputFileName">
+           <property name="placeholderText">
+            <string>默认：test_depress.txt</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btnDecompress">
+         <property name="text">
+          <string>开始解压</string>
+         </property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
